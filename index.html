@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DADU | Hoodies</title>
-
 <style>
 * { box-sizing: border-box; }
 body {
@@ -45,7 +45,7 @@ nav a {
   letter-spacing: 4px;
 }
 .product {
-  max-width: 850px;
+  max-width: 900px;
   margin: 35px auto;
   padding: 20px;
   display: grid;
@@ -62,6 +62,7 @@ nav a {
   display: flex;
   gap: 8px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 .thumbnails img {
   width: 65px;
@@ -83,19 +84,26 @@ nav a {
   margin: 5px 4px 5px 0;
   cursor: pointer;
 }
-.colors button:hover, .sizes button:hover {
+.colors button.active, .sizes button.active {
   background: #172c50;
+  border-color: #9db9e8;
+}
+.price {
+  font-size: 28px;
+  color: #dce7ff;
 }
 .order {
-  margin-top: 25px;
+  margin-top: 20px;
   width: 100%;
   padding: 16px;
   background: #172c50;
-  border: none;
+  border: 1px solid #344e78;
   color: white;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   cursor: pointer;
+  font-weight: bold;
 }
+.order:hover { background: #243e68; }
 footer {
   text-align: center;
   padding: 35px;
@@ -106,10 +114,10 @@ footer {
   .product { grid-template-columns: 1fr; }
   .main-photo { height: 350px; }
   header { padding: 20px; }
+  .hero h1 { font-size: 30px; }
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -134,22 +142,25 @@ footer {
 
     <h3>COLOR</h3>
     <div class="colors">
-      <button onclick="showPhotos('black')">BLACK</button>
-      <button onclick="showPhotos('white')">WHITE</button>
-      <button onclick="showPhotos('blue')">NAVY BLUE</button>
+      <button class="active" onclick="showPhotos('black', this)">BLACK</button>
+      <button onclick="showPhotos('white', this)">WHITE</button>
+      <button onclick="showPhotos('blue', this)">NAVY BLUE</button>
     </div>
 
     <h3>SIZE</h3>
     <div class="sizes">
-      <button onclick="chooseSize('S')">S</button>
-      <button onclick="chooseSize('M')">M</button>
-      <button onclick="chooseSize('L')">L</button>
-      <button onclick="chooseSize('XL')">XL</button>
+      <button onclick="chooseSize('S', this)">S</button>
+      <button onclick="chooseSize('M', this)">M</button>
+      <button onclick="chooseSize('L', this)">L</button>
+      <button onclick="chooseSize('XL', this)">XL</button>
     </div>
 
     <p id="selectedSize">Select your size</p>
-    <h3>PRICE COMING SOON</h3>
-    <button class="order" onclick="alert('Online ordering coming soon!')">ORDER NOW</button>
+    <h3 class="price">60 ₾</h3>
+
+    <button class="order" onclick="orderNow()">
+      ORDER VIA INSTAGRAM
+    </button>
   </div>
 </section>
 
@@ -162,7 +173,11 @@ const photos = {
   blue: ["blue1.png", "blue2.png", "blue3.png", "bl4.png", "bl5.png"]
 };
 
-function showPhotos(color) {
+let selectedColor = "black";
+let selectedSize = "";
+
+function showPhotos(color, button) {
+  selectedColor = color;
   const main = document.getElementById("mainPhoto");
   const thumbs = document.getElementById("thumbnails");
 
@@ -172,17 +187,38 @@ function showPhotos(color) {
   photos[color].forEach(photo => {
     const img = document.createElement("img");
     img.src = photo;
+    img.alt = "DADU hoodie";
     img.onclick = () => main.src = photo;
     thumbs.appendChild(img);
   });
+
+  document.querySelectorAll(".colors button").forEach(b => b.classList.remove("active"));
+  if (button) button.classList.add("active");
 }
 
-function chooseSize(size) {
+function chooseSize(size, button) {
+  selectedSize = size;
   document.getElementById("selectedSize").innerText = "Selected size: " + size;
+  document.querySelectorAll(".sizes button").forEach(b => b.classList.remove("active"));
+  button.classList.add("active");
+}
+
+function orderNow() {
+  if (!selectedSize) {
+    alert("Please select your size first!");
+    return;
+  }
+
+  const message = "Hello DADU! I want to order a hoodie. Color: " +
+    selectedColor.toUpperCase() + ", Size: " + selectedSize + ", Price: 60 GEL.";
+
+  window.open(
+    "https://ig.me/m/daduhoodies",
+    "_blank"
+  );
 }
 
 showPhotos("black");
 </script>
-
 </body>
 </html>
