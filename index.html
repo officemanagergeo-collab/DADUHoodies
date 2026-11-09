@@ -4,164 +4,371 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DADU | Wear Your Mood</title>
+<title>DADU | Hoodies</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#090b10;color:#fff;font-family:Arial,sans-serif}
-header{text-align:center;padding:28px 20px;border-bottom:1px solid #252a35}
-.logo{font-size:38px;letter-spacing:9px;font-weight:bold}
-.tagline{color:#8b9bb8;letter-spacing:4px;font-size:11px;margin-top:8px}
-.hero{text-align:center;padding:65px 20px 45px}
-.hero h1{font-size:clamp(34px,7vw,65px);letter-spacing:5px}
-.hero p{color:#aab3c4;margin-top:15px;letter-spacing:2px}
-.collection{max-width:1150px;margin:25px auto 65px;padding:0 20px}
-.collection-title{text-align:center;margin-bottom:30px}
-.collection-title h2{font-size:27px;letter-spacing:3px}
-.collection-title p{color:#aab3c4;margin-top:10px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:25px}
-.product{background:#11151e;border:1px solid #252c3a;padding:15px;border-radius:5px}
-.main-image{width:100%;aspect-ratio:4/5;object-fit:cover;background:#1a1e28;display:block}
-.thumbnails{display:flex;gap:7px;overflow-x:auto;margin-top:10px;padding-bottom:5px}
-.thumbnails img{width:58px;height:68px;object-fit:cover;cursor:pointer;border:1px solid #41495a;opacity:.7}
-.thumbnails img:hover{opacity:1;border-color:#9aabc9}
-.product h3{margin-top:20px;font-size:20px;letter-spacing:1px}
-.price{color:#a9bbdc;font-size:21px;font-weight:bold;margin-top:10px}
-.options{margin-top:18px}
-.options label{display:block;color:#aab3c4;font-size:13px;margin-bottom:8px}
-.options select{width:100%;padding:12px;background:#090b10;color:white;border:1px solid #41495a;margin-bottom:14px}
-.order{display:block;width:100%;padding:15px;background:#172641;color:white;text-align:center;text-decoration:none;letter-spacing:2px;margin-top:10px;border:1px solid #526887}
-.order:hover{background:#263d60}
-footer{text-align:center;padding:35px 15px;border-top:1px solid #252a35;color:#8993a5}
-footer a{color:#a9bbdc;text-decoration:none}
-@media(max-width:600px){.hero{padding:45px 15px}.collection{padding:0 14px}}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #080b12;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 28px 20px;
+  text-align: center;
+  border-bottom: 1px solid #252f40;
+}
+
+.logo {
+  font-size: 38px;
+  letter-spacing: 9px;
+  font-weight: bold;
+}
+
+.tagline {
+  color: #8b9bb8;
+  letter-spacing: 4px;
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: #aab5ca;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.hero {
+  text-align: center;
+  padding: 65px 20px 35px;
+}
+
+.hero h1 {
+  font-size: 44px;
+  letter-spacing: 6px;
+}
+
+.hero p {
+  color: #aab5ca;
+  margin-top: 15px;
+  letter-spacing: 4px;
+}
+
+.collection-title {
+  text-align: center;
+  margin: 55px 0 20px;
+  letter-spacing: 4px;
+  font-size: 24px;
+}
+
+.products {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.product {
+  background: #101622;
+  padding: 18px;
+  border: 1px solid #252f40;
+}
+
+.main-photo {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  background: #151b28;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 7px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.thumbnails img {
+  width: 52px;
+  height: 58px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #30394b;
+}
+
+.product h2 {
+  letter-spacing: 3px;
+  font-size: 21px;
+  margin-top: 18px;
+}
+
+.product p {
+  color: #aab5ca;
+  margin: 12px 0;
+}
+
+.product h3 {
+  margin-top: 18px;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.colors button,
+.sizes button {
+  background: transparent;
+  border: 1px solid #66718a;
+  color: white;
+  padding: 10px 12px;
+  margin: 4px 3px 4px 0;
+  cursor: pointer;
+}
+
+.colors button.active,
+.sizes button.active {
+  background: #172c50;
+  border-color: #9db9e8;
+}
+
+.price {
+  font-size: 28px;
+  color: #dce7ff;
+  margin-top: 20px;
+}
+
+.order {
+  margin-top: 12px;
+  width: 100%;
+  padding: 15px;
+  background: #172c50;
+  border: 1px solid #344e78;
+  color: white;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.order:hover {
+  background: #243e68;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #77839a;
+  letter-spacing: 3px;
+}
+
+@media(max-width:700px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .main-photo {
+    height: 350px;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo">DADU</div>
-<div class="tagline">WEAR YOUR MOOD</div>
+  <div class="logo">DADU</div>
+  <div class="tagline">WEAR YOUR MOOD.</div>
+  <nav>
+    <a href="#">HOME</a>
+    <a href="#collection1">SHOP</a>
+  </nav>
 </header>
 
 <section class="hero">
-<h1>FIND YOUR STYLE</h1>
-<p>YOUR MOOD. YOUR STYLE. YOUR DADU.</p>
+  <h1>DADU HOODIES</h1>
+  <p>WEAR YOUR MOOD.</p>
 </section>
 
-<div id="collections"></div>
+<h2 class="collection-title" id="collection1">
+  ESSENTIAL COLLECTION
+</h2>
 
-<footer>
-<p>DADU — WEAR YOUR MOOD.</p>
-<p style="margin-top:12px">
-Instagram:
-<a href="https://www.instagram.com/daduhoodies/" target="_blank">@daduhoodies</a>
-</p>
-</footer>
+<section class="products">
+
+<div class="product">
+  <img class="main-photo" id="photo1" src="1.png" alt="Essential Hoodie">
+  <div class="thumbnails" id="thumbs1"></div>
+
+  <h2>ESSENTIAL HOODIE</h2>
+  <p>Minimal design. Everyday comfort.</p>
+
+  <h3>COLOR</h3>
+  <div class="colors" id="colors1">
+    <button class="active" onclick="changeColor(1,'black',this)">BLACK</button>
+    <button onclick="changeColor(1,'white',this)">WHITE</button>
+    <button onclick="changeColor(1,'blue',this)">NAVY BLUE</button>
+  </div>
+
+  <h3>SIZE</h3>
+  <div class="sizes">
+    <button onclick="chooseSize(1,'S',this)">S</button>
+    <button onclick="chooseSize(1,'M',this)">M</button>
+    <button onclick="chooseSize(1,'L',this)">L</button>
+    <button onclick="chooseSize(1,'XL',this)">XL</button>
+  </div>
+
+  <p id="size1">Select your size</p>
+  <div class="price">60 ₾</div>
+  <button class="order" onclick="orderNow(1)">
+    ORDER VIA INSTAGRAM
+  </button>
+</div>
+
+</section>
+
+<h2 class="collection-title" id="collection2">
+  NEW COLLECTION
+</h2>
+
+<section class="products">
+
+<div class="product">
+  <img class="main-photo" id="photo2" src="BK11.png" alt="New Collection Hoodie">
+  <div class="thumbnails" id="thumbs2"></div>
+
+  <h2>NEW COLLECTION</h2>
+  <p>Express your mood. Find your color.</p>
+
+  <h3>COLOR</h3>
+  <div class="colors" id="colors2">
+    <button class="active" onclick="changeColor(2,'black',this)">BLACK</button>
+    <button onclick="changeColor(2,'brown',this)">BROWN</button>
+    <button onclick="changeColor(2,'red',this)">RED</button>
+    <button onclick="changeColor(2,'yellow',this)">YELLOW</button>
+  </div>
+
+  <h3>SIZE</h3>
+  <div class="sizes">
+    <button onclick="chooseSize(2,'S',this)">S</button>
+    <button onclick="chooseSize(2,'M',this)">M</button>
+    <button onclick="chooseSize(2,'L',this)">L</button>
+    <button onclick="chooseSize(2,'XL',this)">XL</button>
+  </div>
+
+  <p id="size2">Select your size</p>
+  <div class="price">70 ₾</div>
+  <button class="order" onclick="orderNow(2)">
+    ORDER VIA INSTAGRAM
+  </button>
+</div>
+
+</section>
+
+<footer>DADU © 2026</footer>
 
 <script>
-const collections = [
-{
-name:"ESSENTIAL COLLECTION",
-description:"Everyday comfort. Timeless style.",
-products:[{
-name:"Essential Hoodie",
-price:60,
-colors:{
-"Black":["1.png","2.png","3.png","4.png","5.png"],
-"White":["wt1.png","wt2.png","wt3.png","wt4.png","wt5.png"],
-"Navy Blue":["blue1.png","blue2.png","blue3.png","bl4.png","bl5.png"]
-}
-}]
-},
-{
-name:"NEW COLLECTION",
-description:"New colors. Same DADU attitude.",
-products:[{
-name:"New Collection Hoodie",
-price:70,
-colors:{
-"Black":["bk1.png","bk2.png","bk3.png","bk4.png","bk5.png","bk6.png"],
-"Brown":["br1.png","br2.png","br3.png","br4.png","br5.png"],
-"Red":["red1.png","red2.png","red3.png","red4.png","red5.png","red6.png"],
-"Yellow":["yell1.png","yell2.png","yell3.png","yell4.png","yell5.png"]
-}
-}]
-},
-{
-name:"JACKET COLLECTION",
-description:"A new layer. A new statement.",
-products:[{
-name:"DADU Jacket",
-price:140,
-colors:{
-"Black":["bk7.png"],
-"Gray":["gray1.png","gray2.png","gray3.png"]
-}
-}]
-}
-];
+const photos = {
+  1: {
+    black: ["1.png","2.png","3.png","4.png","5.png"],
+    white: ["wt1.png","wt2.png","wt3.png","wt4.png","wt5.png"],
+    blue: ["blue1.png","blue2.png","blue3.png","bl4.png","bl5.png"]
+  },
 
-const container=document.getElementById("collections");
+  2: {
+    black: ["BK11.png","BK12.png","BK13.png","BK14.png","BK15.png","BK16.png"],
+    brown: ["br1.png","br2.png","br3.png","br4.png","br5.png"],
+    red: ["red1.png","red2.png","red3.png","red4.png","red5.png","red6.png"],
+    yellow: ["yell1.png","yell2.png","yell3.png","yell4.png","yell5.png"]
+  }
+};
 
-collections.forEach(collection=>{
-const section=document.createElement("section");
-section.className="collection";
-section.innerHTML=`
-<div class="collection-title">
-<h2>${collection.name}</h2>
-<p>${collection.description}</p>
-</div>
-<div class="products"></div>`;
-const productsArea=section.querySelector(".products");
+let selectedColors = {
+  1: "black",
+  2: "black"
+};
 
-collection.products.forEach(product=>{
-const colors=Object.keys(product.colors);
-const card=document.createElement("div");
-card.className="product";
-card.innerHTML=`
-<img class="main-image" src="${product.colors[colors[0]][0]}" alt="${product.name}">
-<div class="thumbnails"></div>
-<h3>${product.name}</h3>
-<div class="price">${product.price} ₾</div>
-<div class="options">
-<label>COLOR</label>
-<select class="color-select">
-${colors.map(color=>`<option value="${color}">${color}</option>`).join("")}
-</select>
-<label>SIZE</label>
-<select class="size-select">
-<option value="">Choose size</option>
-<option value="S">S</option>
-<option value="M">M</option>
-<option value="L">L</option>
-<option value="XL">XL</option>
-</select>
-</div>
-<a class="order" href="https://ig.me/m/daduhoodies" target="_blank">ORDER VIA INSTAGRAM</a>`;
+let selectedSizes = {
+  1: "",
+  2: ""
+};
 
-const mainImage=card.querySelector(".main-image");
-const thumbnails=card.querySelector(".thumbnails");
-const colorSelect=card.querySelector(".color-select");
+function changeColor(id, color, button) {
+  selectedColors[id] = color;
 
-function showImages(color){
-const images=product.colors[color];
-mainImage.src=images[0];
-thumbnails.innerHTML="";
-images.forEach(file=>{
-const thumb=document.createElement("img");
-thumb.src=file;
-thumb.alt=product.name;
-thumb.addEventListener("click",()=>{mainImage.src=file});
-thumbnails.appendChild(thumb);
-});
+  const main = document.getElementById("photo" + id);
+  const thumbs = document.getElementById("thumbs" + id);
+
+  main.src = photos[id][color][0];
+  thumbs.innerHTML = "";
+
+  photos[id][color].forEach(photo => {
+    const img = document.createElement("img");
+    img.src = photo;
+    img.alt = "DADU hoodie";
+
+    img.onclick = () => {
+      main.src = photo;
+    };
+
+    thumbs.appendChild(img);
+  });
+
+  document.querySelectorAll("#colors" + id + " button")
+    .forEach(b => b.classList.remove("active"));
+
+  button.classList.add("active");
 }
 
-colorSelect.addEventListener("change",()=>showImages(colorSelect.value));
-showImages(colors[0]);
-productsArea.appendChild(card);
-});
-container.appendChild(section);
-});
+function chooseSize(id, size, button) {
+  selectedSizes[id] = size;
+
+  document.getElementById("size" + id).innerText =
+    "Selected size: " + size;
+
+  button.parentElement.querySelectorAll("button")
+    .forEach(b => b.classList.remove("active"));
+
+  button.classList.add("active");
+}
+
+function orderNow(id) {
+  if (!selectedSizes[id]) {
+    alert("Please select your size first!");
+    return;
+  }
+
+  const price = id === 1 ? 60 : 70;
+
+  const message = "Hello DADU! I want to order: " +
+    (id === 1 ? "Essential Hoodie" : "New Collection") +
+    ". Color: " + selectedColors[id] +
+    ". Size: " + selectedSizes[id] +
+    ". Price: " + price + " GEL.";
+
+  window.open("https://ig.me/m/daduhoodies", "_blank");
+}
+
+changeColor(1, "black", document.querySelector("#colors1 button"));
+changeColor(2, "black", document.querySelector("#colors2 button"));
 </script>
 
 </body>
