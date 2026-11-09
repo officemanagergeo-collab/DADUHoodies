@@ -1,63 +1,170 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DADU | Hoodies</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DADU | Official Store</title>
 
-    <style>
-        body {
-            margin: 0;
-            background: #080808;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
+<style>
+* { box-sizing: border-box; }
 
-        header {
-            padding: 25px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-        }
+body {
+    margin: 0;
+    background: #080a10;
+    color: white;
+    font-family: Arial, sans-serif;
+}
 
-        .logo {
-            font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 5px;
-            color: white;
-        }
+header {
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #202638;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-        }
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 7px;
+}
 
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
 
-        .hero h1 {
-            font-size: 65px;
-            letter-spacing: 8px;
-        }
+.hero {
+    text-align: center;
+    padding: 65px 20px 35px;
+}
 
-        .hero p {
-            color: #9aa9c8;
-            letter-spacing: 3px;
-        }
+.hero h1 {
+    font-size: 58px;
+    letter-spacing: 12px;
+    margin: 0;
+}
 
-        button {
-            background: #142b50;
-            color: white;
-            border: none;
-            padding: 15px 35px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+.hero p {
+    color: #8fa5cc;
+    letter-spacing: 5px;
+    font-size: 12px;
+}
+
+.collection {
+    max-width: 1050px;
+    margin: auto;
+    padding: 25px 20px 80px;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.main-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    background: #151a25;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    overflow-x: auto;
+}
+
+.thumbnails img {
+    width: 65px;
+    height: 75px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid #30394c;
+}
+
+.details h2 {
+    font-size: 34px;
+    letter-spacing: 3px;
+}
+
+.price {
+    color: #a9bde1;
+    font-size: 18px;
+}
+
+.description {
+    color: #9ba2b1;
+    line-height: 1.7;
+}
+
+.label {
+    margin-top: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.options {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.options button {
+    background: transparent;
+    color: white;
+    border: 1px solid #4a5365;
+    padding: 12px 17px;
+    cursor: pointer;
+}
+
+.options button.active {
+    background: #182d50;
+    border-color: #8fa5cc;
+}
+
+select {
+    background: #101522;
+    color: white;
+    padding: 13px;
+    border: 1px solid #4a5365;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.order {
+    width: 100%;
+    margin-top: 30px;
+    padding: 17px;
+    background: #172e55;
+    color: white;
+    border: none;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #202638;
+    color: #8b93a3;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+@media(max-width:700px) {
+    .product { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 43px; }
+    nav a { margin-left: 8px; font-size: 10px; }
+}
+</style>
 </head>
 
 <body>
@@ -66,16 +173,111 @@
     <div class="logo">DADU</div>
     <nav>
         <a href="#">HOME</a>
-        <a href="#">HOODIES</a>
-        <a href="#">CONTACT</a>
+        <a href="#shop">SHOP</a>
     </nav>
 </header>
 
 <section class="hero">
     <h1>DADU</h1>
     <p>WEAR YOUR MOOD.</p>
-    <button>EXPLORE COLLECTION</button>
 </section>
+
+<section class="collection" id="shop">
+    <div class="product">
+
+        <div>
+            <img class="main-photo" id="mainPhoto" src="1.png" alt="DADU hoodie">
+
+            <div class="thumbnails" id="thumbnails"></div>
+        </div>
+
+        <div class="details">
+            <h2>ESSENTIAL HOODIE</h2>
+            <div class="price">PRICE COMING SOON</div>
+
+            <p class="description">
+                Minimal design. Maximum comfort.
+                Discover the DADU essential collection.
+            </p>
+
+            <div class="label">SELECT COLOR</div>
+            <div class="options">
+                <button class="active" onclick="changeColor('black', this)">BLACK</button>
+                <button onclick="changeColor('white', this)">WHITE</button>
+                <button onclick="changeColor('blue', this)">BLUE</button>
+            </div>
+
+            <div class="label">SELECT SIZE</div>
+            <select id="size">
+                <option value="">Choose your size</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+            </select>
+
+            <button class="order" onclick="orderNow()">
+                ORDER NOW
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    DADU © 2026 — WEAR YOUR MOOD.
+</footer>
+
+<script>
+const photos = {
+    black: ["1.png", "2.png", "3.png", "4.png", "5.png"],
+    white: ["wt1.png", "wt2.png", "wt3.png", "wt4.png", "wt5.png"],
+    blue: ["blue1.png", "blue2.png", "blue3.png", "bl4.png", "bl5.png"]
+};
+
+let currentColor = "black";
+
+function showPhotos(color) {
+    const gallery = document.getElementById("thumbnails");
+    gallery.innerHTML = "";
+
+    document.getElementById("mainPhoto").src = photos[color][0];
+
+    photos[color].forEach(photo => {
+        const img = document.createElement("img");
+        img.src = photo;
+        img.alt = "DADU hoodie";
+        img.onclick = () => {
+            document.getElementById("mainPhoto").src = photo;
+        };
+        gallery.appendChild(img);
+    });
+}
+
+function changeColor(color, button) {
+    currentColor = color;
+
+    document.querySelectorAll(".options button").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    showPhotos(color);
+}
+
+function orderNow() {
+    const size = document.getElementById("size").value;
+
+    if (!size) {
+        alert("Please select your size first.");
+        return;
+    }
+
+    alert("Thank you for choosing DADU! Online ordering is coming soon.");
+}
+
+showPhotos("black");
+</script>
 
 </body>
 </html>
